@@ -9,7 +9,8 @@ def gitBranch = "origin/main"
 // ------------------------------------------------------------
 
 pipeline {
-    agent { node { label 'docker' } }
+    // agent { node { label 'docker' } }
+    agent any
     options {
 		timestamps()
 		buildDiscarder(logRotator(numToKeepStr: '100'))
