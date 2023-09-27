@@ -13,10 +13,7 @@ pipeline {
     options {
 		timestamps()
 		buildDiscarder(logRotator(numToKeepStr: '100'))
-		ansiColor('xterm') {
-		    colorMap('ERROR', 'red')
-		    colorMap('WARNING', 'yellow')
-		}
+		ansiColor('authorizationMatrix')
 	}
 	parameters {
 		choice(name: 'ZAP_TARGET', choices: targets, description:'Website to Scan')
