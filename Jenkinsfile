@@ -3,7 +3,7 @@
 def targets   = ['juice-shop.herokuapp.com', 'www.hackthissite.org', 'tryhackme.com']
 def gitUrl    = "git@git.company.com:group/zap-jenkins.git"
 def gitBranch = "origin/main"
-def gitCredId = <jenkins-cred-id>
+// def gitCredId = <jenkins-cred-id>
 
 // no changes below here
 // ------------------------------------------------------------
