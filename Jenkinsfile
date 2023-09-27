@@ -13,7 +13,7 @@ pipeline {
     options {
 		timestamps()
 		buildDiscarder(logRotator(numToKeepStr: '100'))
-		ansiColor('buildDiscarder')
+		ansiColor('timestamps')
 	}
 	parameters {
 		choice(name: 'ZAP_TARGET', choices: targets, description:'Website to Scan')
