@@ -29,25 +29,25 @@ H 21 * * 1,3,5 %ZAP_TARGET=tryhackme.com;ZAP_ALERT_LVL=Medium;MAX_SCAN_DURATION_
 ''')
     }
 	stages {
-		// stage('checkout'){
-		// 	steps{
-		// 		script {
-  //                   currentBuild.displayName = env.BUILD_NUMBER + "_" + params.ZAP_TARGET + "--" + params.ZAP_ALERT_LVL
-		// 			cleanWs()     
-		// 		}
-  //               // checkout
-  //               checkout([
-  //                   $class: 'GitSCM',
-  //                   branches: [[
-  //                       name: gitBranch
-  //                   ]],
-  //                   userRemoteConfigs: [[
-  //                       credentialsId: gitCredId ,
-  //                       url: gitUrl
-  //                   ]]
-  //               ])
-		// 	}
-		// }
+		stage('checkout'){
+			steps{
+				script {
+                    currentBuild.displayName = env.BUILD_NUMBER + "_" + params.ZAP_TARGET + "--" + params.ZAP_ALERT_LVL
+					cleanWs()     
+				}
+                // checkout
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[
+                        name: gitBranch
+                    ]],
+                    userRemoteConfigs: [[
+                        credentialsId: gitCredId ,
+                        url: gitUrl
+                    ]]
+                ])
+			}
+		}
 		stage('scanning'){
 			steps{
                 catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
